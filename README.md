@@ -15,7 +15,7 @@ A[Image Predictor] -- Tumor Not Found --> C[Classifier Predictor]
 C --Tumor Found--> X{Output: 2} --> W(Tumor Found, No Image Prediction)
 C --Tumor Not Found --> P{Output: 3} --> E(No Tumor Found)
 ```
-Whenever [main.py](main.py) is run, new **Image Predictions** are saved here for now: 
+Whenever [main.py](main.py) predictors function is called, new **Image Predictions** are saved here for now: 
 [PredictionComparison.png](PredictionComparison.png)
 [Prediction.png](Prediction.png)
 
