@@ -1,15 +1,35 @@
+
 # ieee-project-mri
-Detecting stuff with ML and MRI Image scans
+Detecting Tumors with ML and MRI Image scans
 
-Current work is in main2.py
 
-"5EpochTest", "50EpochTest" are the results made so far, they visually show the general accuracy of the models from some random testing samples
+The one important file is [main.py](main.py), which runs both of the predictors. The Classifier Predictor checks if a tumor exists or not, the Image Predictor tries to predict where the tumor is.
 
-Tutorial on classifying the existance of a tumor w/ Tensorflow & Keras:
-https://analyticsindiamag.com/brain-tumor-prediction-through-mri-images-using-cnn-in-keras/
+By running the predictors function with a path to an image as input, it has three outputs,
 
-Data used:
+```mermaid
+graph TD
+q[main.py predictors] --> A
+A[Image Predictor] -- Tumor Found --> F{Output: 1} --> G(Tumor Found, with Image Prediction)
+A[Image Predictor] -- Tumor Not Found --> C[Classifier Predictor]
+C --Tumor Found--> X{Output: 2} --> W(Tumor Found, No Image Prediction)
+C --Tumor Not Found --> P{Output: 3} --> E(No Tumor Found)
+```
+Whenever [main.py](main.py) is run, new **Image Predictions** are saved here for now: 
+[PredictionComparison.png](PredictionComparison.png)
+[Prediction.png](Prediction.png)
+
+
+**Classifier Model** was made using [this colab](https://colab.research.google.com/drive/1cSoonqLZVCLv5-yPecUluVZ00JYyFa5v#scrollTo=YTPZw3Y84AHk) and is saved in these files: [model.h5](model.h5) [model.json](model.json) 
+
+**Image Model** was made using [mainNotebook.ipynb](mainNotebook.ipynb) and is saved in [unet_brain_mri_seg_official.hdf5](unet_brain_mri_seg_official.hdf5)
+
+Folders:
+**[Images_MRI_Scans](https://github.com/X-Ry/ieee-project-mri/tree/master/Images_MRI_Scans "Images_MRI_Scans")** has MRI Scan image datasets
+**[Images_Predictions](https://github.com/X-Ry/ieee-project-mri/tree/master/Images_Predictions "Images_Predictions")** has MRI Scan image datasets
+
+
+Some of the data used:
 https://www.kaggle.com/sartajbhuvaji/brain-tumor-classification-mri
-
-The other data:
 https://www.kaggle.com/navoneel/brain-mri-images-for-brain-tumor-detection
+https://www.kaggle.com/datasets/mateuszbuda/lgg-mri-segmentation
