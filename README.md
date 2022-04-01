@@ -24,11 +24,6 @@ Whenever [main.py](main.py) is run, new **Image Predictions** are saved here for
 
 **Image Model** was made using [mainNotebook.ipynb](mainNotebook.ipynb) and is saved in [unet_brain_mri_seg_official.hdf5](unet_brain_mri_seg_official.hdf5)
 
-Folders:
-**[Images_MRI_Scans](https://github.com/X-Ry/ieee-project-mri/tree/master/Images_MRI_Scans "Images_MRI_Scans")** has MRI Scan image datasets
-**[Images_Predictions](https://github.com/X-Ry/ieee-project-mri/tree/master/Images_Predictions "Images_Predictions")** has MRI Scan image datasets
-
-
 Some of the data used:
 https://www.kaggle.com/sartajbhuvaji/brain-tumor-classification-mri
 https://www.kaggle.com/navoneel/brain-mri-images-for-brain-tumor-detection
